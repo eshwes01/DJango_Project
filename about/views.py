@@ -3,4 +3,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 def about_me(request):
-    return HttpResponse("This would be the about page")
+    if request.method == "GET":
+        return HttpResponse("This was a GET request")
+
+    elif request.method == "POST":
+        return HttpResponse("This would be a POST request")
